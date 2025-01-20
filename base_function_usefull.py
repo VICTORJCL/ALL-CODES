@@ -17,7 +17,6 @@ def loop_por_tempo():
         while datetime.now() < tempo_final:
             #o código vai aqui
             print("Executando...")  # Exemplo
-            print('coisas')
             # Opcional: adicione um pequeno delay para não sobrecarregar o CPU
             time.sleep(1)  # Espera 1 segundo entre execuções .
             

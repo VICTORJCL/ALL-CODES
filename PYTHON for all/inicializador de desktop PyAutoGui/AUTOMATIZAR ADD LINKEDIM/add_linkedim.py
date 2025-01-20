@@ -21,13 +21,13 @@ webbrowser.open('https://www.linkedin.com/search/results/people/?geoUrn=%5B%2290
 # pyautogui.write("tech recruiter", interval=0.10)
 sleep(3)
 def conectar():
-    for i in range(10):
+    for i in range(5):
         clica_na_imagem('conectar')
         sleep(0.5)
         clica_na_imagem('enviar')
         sleep(0.2)
 def seguir():
-    for i in range(10):
+    for i in range(5):
         clica_na_imagem('seguir')
 seguir()
 conectar()
@@ -46,12 +46,13 @@ def add_linkedim():
             pyautogui.press("pagedown")
             sleep(0.3)
             seguir()
+            conectar()
             clica_na_imagem('avancar')
             
             
             # pequeno delay para não sobrecarregar o CPU
             time.sleep(0.5)  
-        
+            print(tempo_final) 
     except KeyboardInterrupt:
         pass
 

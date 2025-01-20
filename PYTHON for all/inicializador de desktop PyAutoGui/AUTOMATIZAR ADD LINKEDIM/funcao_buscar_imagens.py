@@ -27,5 +27,4 @@ def clica_na_imagem(img):
             print(f"Imagem {img} não encontrada na tela")
             return False
     except Exception as e:
-        print(f"Erro ao procurar/clicar na imagem: {e}")
-        return False
+        pass
