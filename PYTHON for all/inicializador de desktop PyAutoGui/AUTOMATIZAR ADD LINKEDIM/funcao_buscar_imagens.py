@@ -1,5 +1,11 @@
 import pyautogui
 from time import sleep
+import os
+# Obtém o diretório do arquivo atual
+caminho_atual = os.path.dirname(os.path.abspath(__file__))
+# Define o diretório de trabalho como o diretório do arquivo
+os.chdir(caminho_atual)
+
 
 def clica_na_imagem(img):
     """
@@ -8,8 +14,8 @@ def clica_na_imagem(img):
     """
     try:
         # Corrigindo o caminho para apontar para a pasta correta
-        imagem = f"C:/PYTHON for All/inicializador de desktop PyAutoGui/AUTOMATIZAR ADD LINKEDIM/img/{img}.png"
-        sleep(1)
+        imagem = f"{caminho_atual}/img/{img}.png"
+        # imagem = f"C:/PYTHON for All/inicializador de desktop PyAutoGui/AUTOMATIZAR ADD LINKEDIM/img/{img}.png"
         
         # Tentativa de localizar a imagem
         local_imagem = pyautogui.locateOnScreen(imagem, confidence=0.9)

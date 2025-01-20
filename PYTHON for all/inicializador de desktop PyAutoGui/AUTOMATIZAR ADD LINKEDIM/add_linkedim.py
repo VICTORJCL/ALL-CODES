@@ -4,56 +4,59 @@ import os
 from time import sleep
 from dotenv import load_dotenv
 import webbrowser
-# tempo
-import time
-from datetime import datetime, timedelta
+import time # tempo
+from datetime import datetime, timedelta # tempo
+
+# Obtém o diretório do arquivo atual
+caminho_atual = os.path.dirname(os.path.abspath(__file__))
+# Define o diretório de trabalho como o diretório do arquivo
+os.chdir(caminho_atual)
 
 from funcao_buscar_imagens import clica_na_imagem
-os.chdir('C:/PYTHON for All/inicializador de desktop PyAutoGui/AUTOMATIZAR ADD LINKEDIM/img')
 
 load_dotenv()
 
 # curitiba e região, tech recruiter
 webbrowser.open('https://www.linkedin.com/search/results/people/?geoUrn=%5B%2290009579%22%5D&keywords=tech%20recruiter&origin=FACETED_SEARCH&sid=C2e')
 # pyautogui.write("tech recruiter", interval=0.10)
+sleep(3)
+def conectar():
+    for i in range(10):
+        clica_na_imagem('conectar')
+        sleep(0.5)
+        clica_na_imagem('enviar')
+        sleep(0.2)
+def seguir():
+    for i in range(10):
+        clica_na_imagem('seguir')
+seguir()
+conectar()
+sleep(1)
+pyautogui.press("pagedown")
 
-
-
-def loop_por_tempo():
+def add_linkedim():
     # Define o tempo de término (10 minutos a partir de agora)
-    tempo_final = datetime.now() + timedelta(minutes=10)
+    tempo_final = datetime.now() + timedelta(minutes=2)
     
     try:
         while datetime.now() < tempo_final:
             # Seu código aqui
-            sleep(3)
-            clica_na_imagem('pessoas')
-            sleep(2)
-            clica_na_imagem('conectar')
-            sleep(1)
-            clica_na_imagem('enviar')
-            sleep(1)
-            clica_na_imagem('entendi')
+            seguir()
+            conectar()
             pyautogui.press("pagedown")
-            sleep(1)
+            sleep(0.3)
+            seguir()
+            clica_na_imagem('avancar')
             
-            # Opcional: adicione um pequeno delay para não sobrecarregar o CPU
-            time.sleep(1)  # Espera 1 segundo entre execuções
+            
+            # pequeno delay para não sobrecarregar o CPU
+            time.sleep(0.5)  
         
     except KeyboardInterrupt:
-        print("\nPrograma interrompido pelo usuário")
-
-sleep(3)
-clica_na_imagem('pessoas')
-sleep(2)
-
-pyautogui.press("pagedown")
-sleep(1)
-clica_na_imagem('conectar')
-sleep(1)
-clica_na_imagem('enviar')
+        pass
 
 
+add_linkedim()
 
 
 
