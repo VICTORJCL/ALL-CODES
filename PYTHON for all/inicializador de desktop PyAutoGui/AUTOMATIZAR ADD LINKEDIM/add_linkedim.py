@@ -51,7 +51,7 @@ def add_linkedim():
             
             
             # pequeno delay para não sobrecarregar o CPU
-            time.sleep(0.5)  
+            time.sleep(1.5)  
             print(tempo_final) 
     except KeyboardInterrupt:
         pass

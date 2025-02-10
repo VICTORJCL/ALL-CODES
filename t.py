@@ -1,9 +1,13 @@
-import os
-# Obtém o diretório do arquivo atual
-caminho_atual = os.path.dirname(os.path.abspath(__file__))
-# Define o diretório de trabalho como o diretório do arquivoo
-os.chdir(caminho_atual)
-print(caminho_atual)
-print(str(caminho_atual))
-print('aqui')
-print('aqu2')
+# import os
+# # Obtém o diretório do arquivo atual
+# caminho_atual = os.path.dirname(os.path.abspath(__file__))
+# # Define o diretório de trabalho como o diretório do arquivoo
+# os.chdir(caminho_atual)
+
+
+
+def reverte_palavra(palavra):
+    palavra_reverse=palavra[::-1]
+    return print(palavra_reverse)
+
+reverte_palavra('senhor')

@@ -57,6 +57,7 @@ wb.save("formula.xlsx")
 # Adicionando linhas e colunas
 sheet.insert_rows(7)
 sheet.delete_cols(2, 5) # Deleta as colunas B:F
+# sheet.delete_rows()
 
 # Adicionando imagens
 from openpyxl.drawing.image import Image
